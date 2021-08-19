@@ -1,11 +1,14 @@
-
-import './App.css';
+import Header from './components/header/Header';
+import VideoList from './components/video-list/VideoList';
+import Video from './components/videoplayer/Video';
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <>
+     <Header />
+    <Video />
+    <VideoList />
+    </>
   );
 }
 
