@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from './components/header/Header';
-import videoData from './data/video-details.json'
+import videoData from './data/video-details.json';
 import VideoList from './components/video-list/VideoList';
-import Video from './components/videoplayer/Video'
+import Video from './components/videoplayer/Video';
+import nextVideoData from './data/videos.json';
 
 class App extends React.Component {
   state = {
     videos: videoData,
     currentVideo: videoData[0],
+    nextVideos: nextVideoData
 }
   render ()
   {
@@ -15,7 +17,7 @@ class App extends React.Component {
     <>
     <Header />
     <Video video={this.state.currentVideo}/>
-    {/* <VideoList /> */}
+    <VideoList nextVideo={this.state.nextVideos}/>
     </>
   );
 }

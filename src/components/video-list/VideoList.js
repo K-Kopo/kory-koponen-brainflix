@@ -1,29 +1,18 @@
-
 import React from 'react';
 
-class VideoList extends React.Component {
-    
-
-   
-    render () {
-    return (
-      <div className="video">
-        {this.state.videos.map(video => {
-            return <section>
-                <video src={`${video.video}/?api_key=07b921d3-0e1f-4039-ad7e-f4bce269c942`}/>
-                <h1>{video.title}</h1>
-                <h3>{`By: ${video.channel}`}</h3>
-                <h3>{video.timestamp}</h3>
-                <h4>{video.views}</h4>
-                <h4>{video.likes}</h4>
-                <p>{video.description}</p>
-            </section> 
-            
-
-        })}
-      </div>  
-    );
-}
+const VideoList = (props) => {
+  return (
+    <div className="next-video">
+      <h4 className="next-video__title">NEXT VIDEO</h4>
+      {props.nextVideo.map(next => 
+      <div className="next-video__box">
+        <img className = "next-video__box--img" src={next.image}/>
+        <h4 className="next-video__box--title">{next.title}</h4>
+        <h5 className="next-video__box--author">{next.channel}</h5>
+      </div>)}
+    </div>
+      
+  );
 };
 
 export default VideoList;

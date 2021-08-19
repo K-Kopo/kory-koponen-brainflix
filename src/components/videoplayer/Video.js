@@ -1,4 +1,6 @@
 import React from "react";
+import viewsLogo from "../../assets/Icons/Icon-views.svg";
+import likesLogo from "../../assets/Icons/Icon-likes.svg";
 // import mohan from "../../assets/Icons/Mohan-muruge.jpg";
 
 const options = { year: "numeric", month: "numeric", day: "numeric" };
@@ -6,30 +8,30 @@ const options = { year: "numeric", month: "numeric", day: "numeric" };
 const Video = (props) => {
   return (
     <>
-      <div>
+      <div className="video">
         <video>
           <source src={props.video.video} />
         </video>
-        <h1>{props.video.title}</h1>
-        <h3>
+        <h1 className="video__title">{props.video.title}</h1>
+        <h3 className="video__info">
           By {props.video.channel}{" "}
           {new Date(Number(props.video.timestamp)).toLocaleString(
             "en-US",
             options
           )}
         </h3>
-        <h3>
-          {props.video.views} {props.video.likes}
+        <h3 className="video__views-likes">
+         <img src= {viewsLogo}/>{props.video.views}<img src= {likesLogo}/>{props.video.likes}
         </h3>
       </div>
-      <p>{props.video.description}</p>
-      <section class="comments">
-        <h3 class="comments__title">3 Comments</h3>
-        <div class="comments__outerbox">
-          <div class="comments__outerbox__img"></div>
-          <div class="comments__outerbox--box">
+      <p className="video__describe">{props.video.description}</p>
+      <section class="new-comment">
+        <h3 class="new-comment__title">3 Comments</h3>
+        <div class="new-comment__outerbox">
+          <div class="new-comment__outerbox__img"></div>
+          <div class="new-comment__outerbox--box">
             <form action="submit" id="commentForm">
-              <label for="comment" class="comments__text">
+              <label for="comment" class="new-comment__text">
                 Join the Conversation
               </label>
               <textarea
@@ -48,20 +50,23 @@ const Video = (props) => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="comments">
         {props.video.comments.map((each) => (
-          <div>
-            <div>
-              <li>{each.name}</li>
-              <li>
+          <article className="comments__outerbox">
+            <div className="comments__img"></div>
+            <div className="comments__innerbox">
+            <div className="comments__name-box">
+              <div className="comments__name-box--name">{each.name}</div>
+              <div className="comments__name-box--date">
                 {new Date(Number(each.timestamp)).toLocaleString(
                   "en-US",
                   options
                 )}
-              </li>
+              </div>
             </div>
-            <li>{each.comment}</li>
-          </div>
+            <div className="comments__text">{each.comment}</div>
+            </div>
+          </article>
         ))}
       </section>
     </>
