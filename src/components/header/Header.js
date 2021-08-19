@@ -1,4 +1,4 @@
-import App from "../../App";
+
 import logo from "../../assets/Logo/Logo-brainflix.svg"
 import React from 'react';
 

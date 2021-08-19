@@ -1,13 +1,10 @@
-import videoData from '../../data/videos.json'
+
 import React from 'react';
 
 class VideoList extends React.Component {
     
 
-    state = {
-        videos: videoData,
-        currentVideoId: videoData[0],
-    }
+   
     render () {
     return (
       <div className="video">

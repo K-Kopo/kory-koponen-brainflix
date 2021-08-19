@@ -1,15 +1,24 @@
+import React from 'react';
 import Header from './components/header/Header';
+import videoData from './data/video-details.json'
 import VideoList from './components/video-list/VideoList';
-import Video from './components/videoplayer/Video';
+import Video from './components/videoplayer/Video'
 
-function App() {
+class App extends React.Component {
+  state = {
+    videos: videoData,
+    currentVideo: videoData[0],
+}
+  render ()
+  {
   return (
     <>
-     <Header />
-    <Video />
-    <VideoList />
+    <Header />
+    <Video video={this.state.currentVideo}/>
+    {/* <VideoList /> */}
     </>
   );
+}
 }
 
 export default App;
