@@ -9,8 +9,10 @@ const Video = (props) => {
   return (
     <>
       <div className="video">
-        <video>
-          <source src={props.video.video} />
+        <video poster={props.video.image} 
+              controls
+              width={'100%'} >
+          
         </video>
         <h1 className="video__title">{props.video.title}</h1>
         <h3 className="video__info">
