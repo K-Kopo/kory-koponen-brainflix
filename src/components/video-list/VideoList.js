@@ -9,8 +9,10 @@ const VideoList = (props) => {
       key={next.id}
       onClick={()=>props.handleClick(next.id)}>
         <img className = "next-video__box--img" src={next.image}/>
+        <div className="next-video__box--text">
         <h4 className="next-video__box--title">{next.title}</h4>
         <h5 className="next-video__box--author">{next.channel}</h5>
+        </div>
       </div>)}
     </div>
       

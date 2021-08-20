@@ -1,8 +1,45 @@
+@use "../../partials/mixin" as *;
+@use "../../partials/variables" as *;
+
 .next-video {
+    display: flex;
+    flex-direction: column;
+    &__title {
+        @include page-header-text-mobile;
+        color: $font-color-secondary-mercury;
+        
+    }
+    
     &__box {
+        display: flex;
+        
         &--img {
-            height: 250px;
-            width: 250px;
+            height: 6rem;
+            min-width: 10rem;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        &--text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            @include section-header-text-mobile;
+            font-weight: 100;
+            
+        }
+        &--title{
+            display: block;
+            margin: 0;
+            max-height: 4rem;
+            // max-width: 16rem;
+            overflow: hidden;
+            // white-space: nowrap;
+            text-overflow: ellipsis;
+            
+        }
+        &--author {
+            margin: 0;
         }
     }
 }
