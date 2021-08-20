@@ -28,7 +28,7 @@ changeVideo = (id) => {
     <Video video={this.state.currentVideo}/>
     <VideoList 
     handleClick={this.changeVideo}
-    nextVideo={this.state.nextVideos}/>
+    nextVideo={this.state.nextVideos.filter(nextVideo=> nextVideo.id !== this.state.currentVideo.id)}/>
     </>
   );
 }
