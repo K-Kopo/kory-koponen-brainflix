@@ -30,6 +30,7 @@
             padding-left: 1rem;
             
             
+            
         }
         &--title{
             display: block;
@@ -38,7 +39,7 @@
             // max-width: 16rem;
             overflow: hidden;
             // white-space: nowrap;
-            text-overflow: ellipsis;
+            text-overflow: "...";
             font-weight: 500;
             
         }
