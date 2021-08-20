@@ -4,14 +4,16 @@
 .next-video {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
     &__title {
-        @include page-header-text-mobile;
+        @include subheader-text-mobile;
         color: $font-color-secondary-mercury;
         
     }
     
     &__box {
         display: flex;
+        padding: .75rem 0;
         
         &--img {
             height: 6rem;
@@ -25,7 +27,8 @@
             justify-content: space-around;
             align-items: flex-start;
             @include section-header-text-mobile;
-            font-weight: 100;
+            padding-left: 1rem;
+            
             
         }
         &--title{
@@ -36,10 +39,12 @@
             overflow: hidden;
             // white-space: nowrap;
             text-overflow: ellipsis;
+            font-weight: 500;
             
         }
         &--author {
             margin: 0;
+            font-weight: 400;
         }
     }
 }

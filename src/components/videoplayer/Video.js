@@ -22,9 +22,9 @@ const Video = (props) => {
         </div>
         <h3 className="video__views-likes">
           <img className="video__views-likes--img" src={viewsLogo} />
-          {props.video.views}
+          <div className="video__views-likes--num">{props.video.views} </div>
           <img className="video__views-likes--img" src={likesLogo} />
-          {props.video.likes}
+          <div className="video__views-likes--num">{props.video.likes} </div>
         </h3>
       </div>
       <p className="video__describe">{props.video.description}</p>
@@ -49,7 +49,7 @@ const Video = (props) => {
               type="reset"
               rows="5"
               cols="20"
-              placeholder="Add a new comment"
+              placeholder="Write comment here"
             ></textarea>
             <button type="submit" className="new-comment__outerbox--form--button">
               Comment
