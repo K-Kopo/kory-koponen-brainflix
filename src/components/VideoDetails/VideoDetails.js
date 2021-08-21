@@ -6,7 +6,7 @@ import videodetails from "../VideoDetails/videodetails.scss"
 const options = { year: "numeric", month: "numeric", day: "numeric" };
 const VideoDetails = (props) => {
     return (
-        <div>
+        <div className="video-details">
                    <h1 className="video__title">{props.video.title}</h1>
         <div className="video__infobox">
         <div className="video__info">

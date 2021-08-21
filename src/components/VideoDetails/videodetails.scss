@@ -12,7 +12,13 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+.video-details {
+    @include desktop {
+        margin: 0;
+        width: 100%;
+        flex-basis: 150%;
+    }
+}
 .video {
     
     
@@ -95,6 +101,9 @@ body {
         display: flex;
         margin: 1rem;
         border-bottom: 1px solid #e1e1e1;
+        @include desktop {
+            margin: 1rem 0 1rem 1rem;
+        }
         &--inputbox {
             display: flex;
             flex-direction: column;
@@ -170,6 +179,9 @@ body {
         display: flex;
         margin: 1rem;
         border-bottom: 1px solid #e1e1e1;
+        @include desktop {
+            margin: 1rem 0 1rem 1rem;
+        }
     }
     &__img {
         background-color: $font-color-secondary-mercury;
