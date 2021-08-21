@@ -2,9 +2,10 @@ import React from 'react';
 import Header from './components/header/Header';
 import videoData from './data/video-details.json';
 import VideoList from './components/video-list/VideoList';
+import VideoDetails from "./components/VideoDetails/VideoDetails"
 import Video from './components/videoplayer/Video';
 import nextVideoData from './data/videos.json';
-import "./App.scss"
+import "./App.scss";
 
 class App extends React.Component {
   state = {
@@ -26,9 +27,12 @@ changeVideo = (id) => {
     <>
     <Header />
     <Video video={this.state.currentVideo}/>
+    <div className="page-box">
+    <VideoDetails video={this.state.currentVideo}/>
     <VideoList 
     handleClick={this.changeVideo}
     nextVideo={this.state.nextVideos.filter(nextVideo=> nextVideo.id !== this.state.currentVideo.id)}/>
+    </div>
     </>
   );
 }

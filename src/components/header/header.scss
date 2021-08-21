@@ -23,6 +23,10 @@ body {
    @include tablet {
      flex-direction: row;
      justify-content: space-between;
+     padding: 0 1.5rem;
+   }
+   @include desktop {
+     padding: 0 8rem;
    }
 
    &__form {

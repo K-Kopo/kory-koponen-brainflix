@@ -1,0 +1,212 @@
+@import "../../partials/mixin" ;
+@import "../../partials/variables" ;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.video {
+    
+    
+    &__title {
+        @include page-header-text-mobile;
+        padding-left: 1rem;
+    }
+
+    &__infobox {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $font-color-secondary-mercury;
+            margin: 0;
+            
+        }
+    }
+    &__info {
+        display: flex;
+        padding-left: 1rem;
+        @include tablet {
+            margin-bottom: 0;
+        }
+
+        
+        
+        &--author{
+            font-family: "AvenirNext LT Pro";
+            font-size: 1rem;
+            margin-right: 2rem;
+            font-weight: 400;
+            
+        }
+        &--date{
+            font-family: "AvenirNext LT Pro";
+            font-size: 1rem;
+            color: $font-color-primary-silver;
+            font-weight: 400;
+
+        }
+    }
+    &__views-likes {
+        @include subheader-text-mobile;
+        font-weight: 100;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $font-color-secondary-mercury;
+        margin: 1rem;
+        padding-bottom: 1rem;
+        @include tablet {
+            border: none;
+            margin-bottom: 0;
+        }
+        &--img {
+            padding-right: .75rem;
+        }
+        &--num {
+            padding-right: 1.25rem;
+        }
+    }
+    &__describe {
+        @include page-body-copy-mobile;
+        padding: 0 1rem;
+        @include tablet {
+            width: 75%;
+            @include page-body-copy;
+        }
+    }
+}
+
+.new-comment {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        @include subheader-text-mobile;
+        padding-left: 1rem;
+    }
+    &__outerbox {
+        display: flex;
+        margin: 1rem;
+        border-bottom: 1px solid #e1e1e1;
+        &--inputbox {
+            display: flex;
+            flex-direction: column;
+            @include tablet {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 2;
+            padding-bottom: 1.25rem;
+            }
+        }
+        &--img {
+            background-image: url(../../assets/Icons/Mohan-muruge.jpg);
+            min-width: 48px;
+            max-height: 48px;
+            border-radius: 50%;
+            background-size: 130%;
+            background-position: center;
+            margin: 1rem;
+            @include tablet {
+                margin: 1rem 1rem 0 0;
+            }
+        }
+        &--form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            @include tablet {
+                flex-direction: row;
+                // margin-bottom: .5rem;
+                align-items: center;
+            }
+            
+            &--label {
+                @include subheader-text-mobile;
+                color: $font-color-secondary-mercury;
+                text-transform: uppercase;
+            }
+            &--textarea {
+                resize: none;
+                @include page-body-copy;
+                color: $font-color-secondary-mercury;
+                border:2px solid #e1e1e1;
+                border-radius: 4px;
+                padding: 1rem;
+                @include tablet {
+                    height: 3rem;
+                    width: 100%;
+                    overflow:hidden;
+                }
+            }
+            &--button {
+                background-color: #0095ff;
+                color: white;
+                text-transform: uppercase;
+                border-radius: 4px;
+                border: none;
+                padding: 1rem 0;
+                margin: 1rem 0;
+                @include tablet {
+                    margin: 1rem;
+                    width: 25%;
+                }
+            }
+            
+        }
+    }
+}
+.comments {
+    display: flex;
+    flex-direction: column;
+    
+    &__outerbox {
+        display: flex;
+        margin: 1rem;
+        border-bottom: 1px solid #e1e1e1;
+    }
+    &__img {
+        background-color: $font-color-secondary-mercury;
+        min-width: 40px;
+        max-height: 40px;
+        border-radius: 50%;
+        
+       
+    }
+    &__innerbox {
+        display: flex;
+        flex-direction: column;
+        padding-left: .5rem;
+    }
+    &__name-box {
+        display:flex;
+        justify-content: space-between;
+        @include tablet {
+            justify-content: flex-start;
+        }
+        &--name {
+            @include page-body-copy;
+            font-weight: 500;
+            @include tablet {
+                margin-right: 1rem;
+            }
+        }
+        &--date {
+            @include page-body-copy;
+            color: $font-color-secondary-mercury;
+        }
+    }
+    &__text {
+        @include page-body-copy;
+        padding: .5rem 0 1rem 0;
+        @include tablet {
+            padding: .5rem 2rem 1rem 0;
+        }
+    }
+}

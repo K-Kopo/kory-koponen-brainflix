@@ -16,6 +16,11 @@ body {
     display: flex;
     flex-direction: column;
     margin: 1rem;
+    @include desktop {
+    border-left: 1px solid #e1e1e1;
+    padding-left: 1rem;
+    margin-top: 0;
+    }
     &__title {
         @include subheader-text-mobile;
         color: $font-color-secondary-mercury;
@@ -45,6 +50,8 @@ body {
             padding-left: 1rem;
             @include tablet {
                 width: 40%;
+                font-size: 1rem;
+                line-height: 1.25rem;
             }
             
             
