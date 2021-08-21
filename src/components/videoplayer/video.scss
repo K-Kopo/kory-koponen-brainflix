@@ -1,5 +1,17 @@
 @use "../../partials/mixin" as *;
 @use "../../partials/variables" as *;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .video {
     
@@ -13,13 +25,18 @@
         padding-left: 1rem;
         
         &--author{
-            @include subheader-text-mobile;
+            font-family: "AvenirNext LT Pro";
+            font-size: 1rem;
             margin-right: 2rem;
+            font-weight: 400;
+            
         }
         &--date{
-            @include subheader-text-mobile;
-            color: $font-color-secondary-mercury;
-            
+            font-family: "AvenirNext LT Pro";
+            font-size: 1rem;
+            color: $font-color-primary-silver;
+            font-weight: 400;
+
         }
     }
     &__views-likes {

@@ -12,7 +12,7 @@ const Header = () => {
         <div className="navbar">
             <img className="navbar__img" src={logo}/>
             <form className="navbar__form">
-            <input className="navbar__search" type="text" placeholder="     Search"></input>
+            <input className="navbar__search" type="text" placeholder="           Search"></input>
             <div className="navbar__box">
             <button className="navbar__box--button">+ UPLOAD</button>
             <div className="navbar__box--avatar"></div>

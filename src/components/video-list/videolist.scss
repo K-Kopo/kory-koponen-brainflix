@@ -1,6 +1,17 @@
 @use "../../partials/mixin" as *;
 @use "../../partials/variables" as *;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .next-video {
     display: flex;
     flex-direction: column;
@@ -37,14 +48,14 @@
             margin: 0;
             max-height: 4rem;
             // width: calc(40%);
-            overflow: hidden;
+            overflow-y: hidden;
             // white-space: normal;
             text-overflow: ellipsis;
             font-weight: 500;
             padding-right: 1rem;
             &::before {
                 position: absolute;
-                content: "...";
+                content: " ... ";
                 inset-block-end: 0; 
                 inset-inline-end: 0; 
             }
