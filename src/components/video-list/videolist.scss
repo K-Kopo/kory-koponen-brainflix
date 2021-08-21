@@ -33,15 +33,29 @@
             
         }
         &--title{
-            display: block;
+            position: relative;
             margin: 0;
             max-height: 4rem;
-            // max-width: 16rem;
+            // width: calc(40%);
             overflow: hidden;
-            // white-space: nowrap;
-            text-overflow: "...";
+            // white-space: normal;
+            text-overflow: ellipsis;
             font-weight: 500;
-            
+            padding-right: 1rem;
+            &::before {
+                position: absolute;
+                content: "...";
+                inset-block-end: 0; 
+                inset-inline-end: 0; 
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                inset-inline-end: 0; 
+                width: 1rem;
+                height: 1rem;
+                background: white;  
+            }
         }
         &--author {
             margin: 0;
