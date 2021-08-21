@@ -11,6 +11,7 @@ const Video = (props) => {
       <div className="video">
         <video poster={props.video.image} controls width={"100%"}></video>
         <h1 className="video__title">{props.video.title}</h1>
+        <div className="video__infobox">
         <div className="video__info">
           <h3 className="video__info--author">By {props.video.channel}</h3>
           <h3 className="video__info--date">
@@ -26,6 +27,7 @@ const Video = (props) => {
           <img className="video__views-likes--img" src={likesLogo} />
           <div className="video__views-likes--num">{props.video.likes} </div>
         </h3>
+        </div>
       </div>
       <p className="video__describe">{props.video.description}</p>
       <section className="new-comment">
@@ -38,6 +40,7 @@ const Video = (props) => {
             action="submit"
             id="commentForm"
           >
+            <div className="new-comment__outerbox--inputbox">
             <label for="comment" className="new-comment__outerbox--form--label">
               Join the Conversation
             </label>
@@ -51,6 +54,7 @@ const Video = (props) => {
               cols="20"
               placeholder="Write comment here"
             ></textarea>
+            </div>
             <button type="submit" className="new-comment__outerbox--form--button">
               Comment
             </button>
