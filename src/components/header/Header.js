@@ -2,7 +2,7 @@
 import logo from "../../assets/Logo/Logo-brainflix.svg"
 import uploadIcon from "../../assets/Icons/Icon-upload.svg"
 import React from 'react';
-import "../header/header.scss";
+import "./header.scss";
 
 
 

@@ -1,7 +1,5 @@
 import React from "react";
-import viewsLogo from "../../assets/Icons/Icon-views.svg";
-import likesLogo from "../../assets/Icons/Icon-likes.svg";
-import "../videoplayer/video.scss";
+import "./video.scss";
 
 
 

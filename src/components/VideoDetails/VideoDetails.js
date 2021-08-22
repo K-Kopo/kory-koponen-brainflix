@@ -1,7 +1,7 @@
 import React from 'react';
 import viewsLogo from "../../assets/Icons/Icon-views.svg";
 import likesLogo from "../../assets/Icons/Icon-likes.svg";
-import videodetails from "../VideoDetails/videodetails.scss"
+import videodetails from "../VideoDetails/videodetails.scss";
 
 const options = { year: "numeric", month: "numeric", day: "numeric" };
 const VideoDetails = (props) => {

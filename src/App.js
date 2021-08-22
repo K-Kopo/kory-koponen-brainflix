@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './components/header/Header';
+import Header from './components/Header/Header';
 import videoData from './data/video-details.json';
-import VideoList from './components/video-list/VideoList';
+import VideoList from './components/VideoList/VideoList';
 import VideoDetails from "./components/VideoDetails/VideoDetails"
-import Video from './components/videoplayer/Video';
+import Video from './components/Videoplayer/Video';
 import nextVideoData from './data/videos.json';
 import "./App.scss";
 
