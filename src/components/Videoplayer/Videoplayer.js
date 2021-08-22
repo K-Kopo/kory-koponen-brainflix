@@ -1,9 +1,9 @@
 import React from "react";
-import "./video.scss";
+import "./videoplayer.scss";
 
 
 
-const Video = (props) => {
+const Videoplayer = (props) => {
   return (
     <>
       <div className="video">
@@ -14,4 +14,4 @@ const Video = (props) => {
   );
 };
 
-export default Video;
+export default Videoplayer;

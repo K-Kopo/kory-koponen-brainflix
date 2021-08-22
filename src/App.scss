@@ -1,5 +1,5 @@
 @import "./partials/mixin";
-@import "./partials/variables" ;
+@import "./partials/variables";
 *,
 *:before,
 *:after {
@@ -23,6 +23,4 @@ body {
   @media screen and (min-width: 1440px) {
     margin: 0 11.25rem;
   }
-    
-  
 }

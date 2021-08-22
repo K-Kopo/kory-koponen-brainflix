@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import videoData from './data/video-details.json';
 import VideoList from './components/VideoList/VideoList';
 import VideoDetails from "./components/VideoDetails/VideoDetails"
-import Video from './components/Videoplayer/Video';
+import Videoplayer from './components/Videoplayer/Videoplayer';
 import nextVideoData from './data/videos.json';
 import NewComments from './components/NewComments/NewComments';
 import Comments from './components/Comments/Comments';
@@ -28,7 +28,7 @@ changeVideo = (id) => {
   return (
     <>
     <Header />
-    <Video video={this.state.currentVideo}/>
+    <Videoplayer video={this.state.currentVideo}/>
     <div className="page-box">
       <div>
     <VideoDetails video={this.state.currentVideo}/>

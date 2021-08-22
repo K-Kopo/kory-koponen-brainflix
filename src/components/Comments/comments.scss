@@ -1,5 +1,5 @@
-@import "../../partials/mixin" ;
-@import "../../partials/variables" ;
+@import "../../partials/mixin";
+@import "../../partials/variables";
 *,
 *:before,
 *:after {
@@ -14,56 +14,54 @@ body {
 }
 
 .comments {
+  display: flex;
+  flex-direction: column;
+
+  &__outerbox {
+    display: flex;
+    margin: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+    @include tablet {
+      margin: 1rem 1.5rem;
+    }
+    @include desktop {
+      margin: 1rem 0 1rem 1rem;
+    }
+  }
+  &__img {
+    background-color: $font-color-secondary-mercury;
+    min-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+  }
+  &__innerbox {
     display: flex;
     flex-direction: column;
-    
-    &__outerbox {
-        display: flex;
-        margin: 1rem;
-        border-bottom: 1px solid #e1e1e1;
-        @include tablet {
-            margin: 1rem 1.5rem;
-        }
-        @include desktop {
-            margin: 1rem 0 1rem 1rem;
-        }
+    padding-left: 0.5rem;
+  }
+  &__name-box {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      justify-content: flex-start;
     }
-    &__img {
-        background-color: $font-color-secondary-mercury;
-        min-width: 40px;
-        max-height: 40px;
-        border-radius: 50%;
-        
-       
+    &--name {
+      @include page-body-copy;
+      font-weight: 500;
+      @include tablet {
+        margin-right: 1rem;
+      }
     }
-    &__innerbox {
-        display: flex;
-        flex-direction: column;
-        padding-left: .5rem;
+    &--date {
+      @include page-body-copy;
+      color: $font-color-primary-silver;
     }
-    &__name-box {
-        display:flex;
-        justify-content: space-between;
-        @include tablet {
-            justify-content: flex-start;
-        }
-        &--name {
-            @include page-body-copy;
-            font-weight: 500;
-            @include tablet {
-                margin-right: 1rem;
-            }
-        }
-        &--date {
-            @include page-body-copy;
-            color: $font-color-primary-silver;
-        }
+  }
+  &__text {
+    @include page-body-copy;
+    padding: 0.5rem 0 1rem 0;
+    @include tablet {
+      padding: 0.5rem 2rem 1rem 0;
     }
-    &__text {
-        @include page-body-copy;
-        padding: .5rem 0 1rem 0;
-        @include tablet {
-            padding: .5rem 2rem 1rem 0;
-        }
-    }
+  }
 }
