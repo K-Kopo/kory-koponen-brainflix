@@ -1,7 +1,6 @@
 
 import logo from "../../assets/Logo/Logo-brainflix.svg";
 import uploadIcon from "../../assets/Icons/Icon-upload.svg";
-import searchIcon from "../../assets/Icons/Icon-search.svg";
 import React from 'react';
 import "./header.scss";
 
