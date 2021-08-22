@@ -26,7 +26,10 @@ body {
      padding: 0 1.5rem;
    }
    @include desktop {
-     padding: 0 8rem;
+     padding: 0 6rem;
+   }
+   @media screen and (min-width: 1440px) {
+     padding: 0 11.25rem;
    }
 
    &__form {
@@ -36,13 +39,14 @@ body {
        display: flex;
        justify-content: flex-end;
        width: 100%;
+       padding: 0rem;
      }
    }
 
    &__img {
        margin-top: 1rem;
        @include tablet {
-         margin: 1rem;
+         margin: 0;
        }
    }
 
@@ -52,6 +56,10 @@ body {
        @include tablet {
          width: 25%;
        
+       }
+
+       &--icon {
+         padding: 0 .25rem;
        }
         &--avatar {
             background-image: url(../../assets/Icons/Mohan-muruge.jpg);
@@ -63,6 +71,9 @@ body {
             margin: 1rem;
         }
         &--button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
             background-color: #0095ff;
             color: white;
             border-radius: 4px;
