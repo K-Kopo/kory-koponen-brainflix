@@ -12,15 +12,13 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
 .video-details {
     @include desktop {
         margin: 0;
         width: 100%;
         flex-basis: 150%;
     }
-}
-.video {
-    
     
     &__title {
         @include page-header-text-mobile;

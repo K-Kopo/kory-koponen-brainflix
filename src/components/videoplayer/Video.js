@@ -7,7 +7,7 @@ const Video = (props) => {
   return (
     <>
       <div className="video">
-        <video poster={props.video.image} controls width={"100%"}></video>
+        <video className="video__poster" poster={props.video.image} controls width={"100%"}></video>
 
       </div>
     </>
