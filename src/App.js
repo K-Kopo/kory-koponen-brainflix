@@ -5,6 +5,8 @@ import VideoList from './components/VideoList/VideoList';
 import VideoDetails from "./components/VideoDetails/VideoDetails"
 import Video from './components/Videoplayer/Video';
 import nextVideoData from './data/videos.json';
+import NewComments from './components/NewComments/NewComments';
+import Comments from './components/Comments/Comments';
 import "./App.scss";
 
 class App extends React.Component {
@@ -28,7 +30,11 @@ changeVideo = (id) => {
     <Header />
     <Video video={this.state.currentVideo}/>
     <div className="page-box">
+      <div>
     <VideoDetails video={this.state.currentVideo}/>
+    <NewComments />
+    <Comments video={this.state.currentVideo}/>
+    </div>
     <VideoList 
     handleClick={this.changeVideo}
     nextVideo={this.state.nextVideos.filter(nextVideo=> nextVideo.id !== this.state.currentVideo.id)}/>
