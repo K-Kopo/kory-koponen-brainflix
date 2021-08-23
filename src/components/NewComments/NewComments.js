@@ -1,10 +1,10 @@
 import React from 'react';
 import "./newcomments.scss";
 
-const NewComments = () => {
+const NewComments = (props) => {
     return (
         <section className="new-comment">
-        <h3 className="new-comment__title">3 Comments</h3>
+        <h3 className="new-comment__title">{props.video.comments.length} Comments</h3>
         <div className="new-comment__outerbox">
           <div className="new-comment__outerbox--img"></div>
 

@@ -32,7 +32,7 @@ changeVideo = (id) => {
     <div className="page-box">
       <div>
     <VideoDetails video={this.state.currentVideo}/>
-    <NewComments />
+    <NewComments video={this.state.currentVideo}/>
     <Comments video={this.state.currentVideo}/>
     </div>
     <VideoList 
