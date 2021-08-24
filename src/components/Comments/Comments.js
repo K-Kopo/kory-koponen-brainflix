@@ -7,7 +7,7 @@ const Comments = (props) => {
     return (
         <section className="comments">
         {props.video.comments.map((each) => (
-          <article className="comments__outerbox">
+          <article key={each.id} className="comments__outerbox">
             <div className="comments__img"></div>
             <div className="comments__innerbox">
               <div className="comments__name-box">
