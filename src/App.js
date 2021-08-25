@@ -8,6 +8,7 @@ import nextVideoData from './data/videos.json';
 import NewComments from './components/NewComments/NewComments';
 import Comments from './components/Comments/Comments';
 import "./App.scss";
+import { BrowserRouter, Route, Switch, Link }  from 'react-router-dom';
 
 class App extends React.Component {
   state = {
@@ -26,7 +27,7 @@ changeVideo = (id) => {
   render ()
   {
   return (
-    <>
+    <BrowserRouter>
     <Header />
     <Videoplayer video={this.state.currentVideo}/>
     <div className="page-box">
@@ -39,7 +40,7 @@ changeVideo = (id) => {
     handleClick={this.changeVideo}
     nextVideo={this.state.nextVideos.filter(nextVideo=> nextVideo.id !== this.state.currentVideo.id)}/>
     </div>
-    </>
+    </BrowserRouter>
   );
 }
 }
