@@ -20,20 +20,4 @@ const App = () => {
 };
 
 export default App;
-// class App extends React.Component {
 
-//   render ()
-//   {
-//   return (
-//     <BrowserRouter>
-//     <Switch>
-//     <Route path="/" exact component={HomePage}/>
-//     <Route path="/video-uploads" component={VideoUploadsPage}></Route>
-//     <Route path="/:videoId" component={HomePage}/>
-//     </Switch>
-//     </BrowserRouter>
-//   );
-// }
-// }
-
-// export default App;
