@@ -17,15 +17,7 @@ class HomePage extends Component {
         videos: [],
         currentVideo: null
     }
-    // changeVideo = (id) => {
-    //   let newVideo = this.state.videos.find(video => video.id === id)
-    //   console.log(newVideo);
-      
-    //   this.setState ({
-    //     currentVideo: newVideo
-    //   })
-    // }
-    
+
     getVideoDetails = (id)=> {
         axios
         .get(`${url}videos/${id}?api_key=${api_key}`)
@@ -42,7 +34,7 @@ class HomePage extends Component {
     }
     
     fetchVideos = () => {
-         // Get the movieId parameter value from the URL.
+         
         const currentVideoId = this.props.match.params.id;
         console.log(currentVideoId);
         apiRequests.getAll().then(response => {
@@ -68,8 +60,6 @@ class HomePage extends Component {
       console.log('Previous: ', prevVideoId);
       console.log('Current: ', currentVideoId);
   
-      // We need to compare the previous value of movieID URL parameter with the current value
-      // and only make an API request if we are changing URLs. This is required to prevent infinite loop of render > componentDidUpdate > render
       if (currentVideoId !== prevVideoId) {
         this.getVideoDetails(currentVideoId);
       } 

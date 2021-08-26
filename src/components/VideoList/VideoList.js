@@ -7,7 +7,7 @@ const VideoList = ({video}) => {
     <div className="next-video">
       <h4 className="next-video__title">NEXT VIDEO</h4>
       {video.map(video => 
-      <Link  key={video.id} to={`/${video.id}`}>
+      <Link  className="next-video__link" key={video.id} to={`/${video.id}`}>
       <div  className="next-video__box" >
       
       

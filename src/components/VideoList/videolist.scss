@@ -25,6 +25,11 @@ body {
     margin: 0;
     width: 100%;
   }
+  &__link {
+    text-decoration: none;
+    list-style: none;
+    color: $font-color-primary-black;
+  }
   &__title {
     @include subheader-text-mobile;
     color: $font-color-primary-silver;
