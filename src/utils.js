@@ -6,7 +6,7 @@ export const api_key = "8c87e374-2f7e-4584-ae0c-ddd8fb0526e0";
 
 export const apiRequests = {
     getAll: () => axios.get(`${url}videos?api_key=${api_key}`),
-    getSingle: id => axios.get(`${url}videos/${id}`),
+    getDetails: id => axios.get(`${url}videos/${id}?api_key=${api_key}`),
     postComment: (comment) => axios.post(`${url}`, comment),
     deleteComment: id => axios.delete(`${url}/${id}`),
     editComment: (id, comment) => axios.put(`${url}/${id}`, comment)

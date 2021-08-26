@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import Header from '../../components/Header/Header';
-
 import VideoList from '../../components/VideoList/VideoList';
 import VideoDetails from "../../components/VideoDetails/VideoDetails"
 import Videoplayer from '../../components/Videoplayer/Videoplayer';
-
 import NewComments from '../../components/NewComments/NewComments';
 import Comments from '../../components/Comments/Comments'
-import {url} from '../../utils';
-import {api_key} from '../../utils';
 import { apiRequests } from "../../utils";
+import {url} from '../../utils'
+import { api_key } from "../../utils";
 import axios from "axios";
+
 
 class HomePage extends Component {
     state = {
@@ -18,9 +17,23 @@ class HomePage extends Component {
         currentVideo: null
     }
 
+    
+    addComment = (event) => {
+      console.log(event.target.value);
+      const currentId = this.state.currentVideo.id;
+      axios.post(`${url}videos/${currentId}/comments?api_key=${api_key}`,{
+          comment: event.target.value.comment,
+          id: currentId
+      })
+      .then(response => {
+
+        this.fetchVideos();
+        
+      })
+    }
     getVideoDetails = (id)=> {
-        axios
-        .get(`${url}videos/${id}?api_key=${api_key}`)
+        apiRequests.getDetails(id)
+        // .get(`${url}videos/${id}?api_key=${api_key}`)
         .then(response => {
             console.log(response.data);
             this.setState({
@@ -79,7 +92,7 @@ class HomePage extends Component {
         <div className="page-box">
           <div>
             <VideoDetails video={this.state.currentVideo} />
-            <NewComments video={this.state.currentVideo} />
+            <NewComments video={this.state.currentVideo} addComment={this.addComment}/>
             <Comments video={this.state.currentVideo} />
           </div>
           <VideoList

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./newcomments.scss";
 
-const NewComments = ({video}) => {
+const NewComments = ({video, addComment}) => {
   if (!video) return <p>Loading...</p>;
     return (
         <section className="new-comment">
@@ -10,6 +10,7 @@ const NewComments = ({video}) => {
           <div className="new-comment__outerbox--img"></div>
 
           <form
+            onSubmit={addComment}
             className="new-comment__outerbox--form"
             action="submit"
             id="commentForm"
@@ -20,9 +21,9 @@ const NewComments = ({video}) => {
             </label>
             <textarea
             className="new-comment__outerbox--form--textarea"
-              id="commentText"
+              id="comment"
               // for="comment"
-              name="commentText"
+              name="comment"
               type="reset"
               rows="5"
               cols="20"

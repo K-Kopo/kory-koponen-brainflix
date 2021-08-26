@@ -8,7 +8,7 @@ const VideoUploadsPage = () => {
             <Header />
             <h1>Upload Video</h1>
             <p>VIDEO THUMBNAIL</p>
-            <img src={videoThumb}/>
+            <img src={videoThumb} alt="bike handlebars"/>
         </div>
     );
 };
