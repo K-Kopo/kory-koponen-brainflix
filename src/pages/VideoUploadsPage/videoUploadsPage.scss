@@ -1,0 +1,24 @@
+@import "../../partials/mixin" ;
+@import "../../partials/variables" ;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.video-uploads {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include subheader-text;
+    color: $font-color-primary-black;
+  }
+}
