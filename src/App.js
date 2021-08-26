@@ -1,48 +1,39 @@
-import React from 'react';
-import Header from './components/Header/Header';
-import videoData from './data/video-details.json';
-import VideoList from './components/VideoList/VideoList';
-import VideoDetails from "./components/VideoDetails/VideoDetails"
-import Videoplayer from './components/Videoplayer/Videoplayer';
-import nextVideoData from './data/videos.json';
-import NewComments from './components/NewComments/NewComments';
-import Comments from './components/Comments/Comments';
+import React from "react";
 import "./App.scss";
-import { BrowserRouter, Route, Switch, Link }  from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import VideoUploadsPage from "./pages/VideoUploadsPage/VideoUploadsPage";
 
-class App extends React.Component {
-  state = {
-    videos: videoData,
-    currentVideo: videoData[0],
-    nextVideos: nextVideoData
-}
-changeVideo = (id) => {
-  let newVideo = this.state.videos.find(video => video.id === id)
-  console.log(newVideo);
-  
-  this.setState ({
-    currentVideo: newVideo
-  })
-}
-  render ()
-  {
+
+const App = () => {
   return (
-    <BrowserRouter>
-    <Header />
-    <Videoplayer video={this.state.currentVideo}/>
-    <div className="page-box">
-      <div>
-    <VideoDetails video={this.state.currentVideo}/>
-    <NewComments video={this.state.currentVideo}/>
-    <Comments video={this.state.currentVideo}/>
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/video-uploads" component={VideoUploadsPage}></Route>
+          <Route path="/:id" component={HomePage} />
+        </Switch>
+      </BrowserRouter>
     </div>
-    <VideoList 
-    handleClick={this.changeVideo}
-    nextVideo={this.state.nextVideos.filter(nextVideo=> nextVideo.id !== this.state.currentVideo.id)}/>
-    </div>
-    </BrowserRouter>
   );
-}
-}
+};
 
 export default App;
+// class App extends React.Component {
+
+//   render ()
+//   {
+//   return (
+//     <BrowserRouter>
+//     <Switch>
+//     <Route path="/" exact component={HomePage}/>
+//     <Route path="/video-uploads" component={VideoUploadsPage}></Route>
+//     <Route path="/:videoId" component={HomePage}/>
+//     </Switch>
+//     </BrowserRouter>
+//   );
+// }
+// }
+
+// export default App;

@@ -1,10 +1,11 @@
 import React from 'react';
 import "./newcomments.scss";
 
-const NewComments = (props) => {
+const NewComments = ({video}) => {
+  if (!video) return <p>Loading...</p>;
     return (
         <section className="new-comment">
-        <h3 className="new-comment__title">{props.video.comments.length} Comments</h3>
+        <h3 className="new-comment__title">{video.comments.length} Comments</h3>
         <div className="new-comment__outerbox">
           <div className="new-comment__outerbox--img"></div>
 
@@ -14,13 +15,13 @@ const NewComments = (props) => {
             id="commentForm"
           >
             <div className="new-comment__outerbox--inputbox">
-            <label for="comment" className="new-comment__outerbox--form--label">
+            <label /*for="comment"*/ className="new-comment__outerbox--form--label">
               Join the Conversation
             </label>
             <textarea
             className="new-comment__outerbox--form--textarea"
               id="commentText"
-              for="comment"
+              // for="comment"
               name="commentText"
               type="reset"
               rows="5"

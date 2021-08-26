@@ -3,10 +3,11 @@ import React from 'react';
 const options = { year: "numeric", month: "numeric", day: "numeric" };
 
 
-const Comments = (props) => {
+const Comments = ({video}) => {
+  if (!video) return <p>Loading...</p>;
     return (
         <section className="comments">
-        {props.video.comments.map((each) => (
+        {video.comments.map((each) => (
           <article key={each.id} className="comments__outerbox">
             <div className="comments__img"></div>
             <div className="comments__innerbox">
