@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import videoThumb from '../../assets/Images/Upload-video-preview.jpg';
 import '../VideoUploadsPage/videoUploadsPage.scss';
 
 const VideoUploadsPage = () => {

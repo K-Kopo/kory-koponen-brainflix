@@ -21,8 +21,8 @@ body {
         
     }
     &__poster {
-      object-fit: cover;
+      object-fit: contain;
       width: 100%;
-      height: 25rem;
+      height: 40vh;
     }
 }

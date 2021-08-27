@@ -19,12 +19,14 @@ body {
   flex-direction: column;
 
   &__title {
-    @include subheader-text;
+    @include section-header-text;
     color: $font-color-primary-black;
+    margin: 1rem;
   }
   &__subtitle {
     @include subheader-text-mobile;
     color: $font-color-primary-silver;
+    margin: 0 0 0 1rem;
   }
   &__img {
     background-image: url(../../assets/Images/Upload-video-preview.jpg);
@@ -41,14 +43,18 @@ body {
   &__form {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
     &--label {
       @include subheader-text-mobile;
       color: $font-color-primary-silver;
+      margin: 2rem 0 .5rem 0;
     }
     &--input {
       background-color: #fafafa;
       border: 2px solid #e1e1e1;
       border-radius: 4px;
+      height: 3rem;
+      padding: 1rem;
     }
     &--textarea {
       resize: none;
@@ -58,6 +64,7 @@ body {
       border: 2px solid #e1e1e1;
       border-radius: 4px;
       padding: 1rem;
+      height: 8rem;
     }
     &--button {
       font-size: 1rem;
