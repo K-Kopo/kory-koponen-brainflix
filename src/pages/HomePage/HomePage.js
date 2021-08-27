@@ -6,9 +6,7 @@ import Videoplayer from "../../components/Videoplayer/Videoplayer";
 import NewComments from "../../components/NewComments/NewComments";
 import Comments from "../../components/Comments/Comments";
 import { apiRequests } from "../../utils";
-import { url } from "../../utils";
-import { api_key } from "../../utils";
-import axios from "axios";
+
 
 class HomePage extends Component {
   state = {
@@ -16,28 +14,12 @@ class HomePage extends Component {
     currentVideo: null,
   };
 
-  // addComment = (event) => {
-  //   console.log(event.target.value);
-  //   const currentId = this.state.currentVideo.id;
-  //   axios.post(`${url}videos/${currentId}/comments?api_key=${api_key}`,{
-  //       comment: event.target.value.comment,
-  //       id: currentId
-  //   })
-  //   .then(response => {
-
-  //     this.fetchVideos();
-
-  //   })
-  // }
   getVideoDetails = (id) => {
-    apiRequests
-      .getDetails(id)
-      .then((response) => {
-       
-        this.setState({
-          currentVideo: response.data,
-        });
+    apiRequests.getDetails(id).then((response) => {
+      this.setState({
+        currentVideo: response.data,
       });
+    });
   };
 
   componentDidMount() {
@@ -76,14 +58,13 @@ class HomePage extends Component {
       : this.state.videos;
     return (
       <div>
-        <Header getVideos={this.fetchVideos} video={this.state.videos}/>
+        <Header video={this.state.videos} />
         <Videoplayer video={this.state.currentVideo} />
         <div className="page-box">
-          <div> 
+          <div> {/* this is necessary for styling */}
             <VideoDetails video={this.state.currentVideo} />
             <NewComments
               video={this.state.currentVideo}
-              addComment={this.addComment}
             />
             <Comments video={this.state.currentVideo} />
           </div>

@@ -13,9 +13,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-Link {
-  text-decoration: none;
-}
+
 .navbar {
   display: flex;
   flex-direction: column;
@@ -59,6 +57,11 @@ Link {
       width: 25%;
     }
 
+    &--link {
+      display: flex;
+      width: 100%;
+    }
+
     &--icon {
       padding: 0 0.25rem;
     }
@@ -83,6 +86,7 @@ Link {
       padding: 0.75rem;
       width: 100%;
       font-family: "AvenirNext LT Pro";
+      text-decoration: none;
 
       @include tablet {
         width: 100%;
@@ -109,3 +113,6 @@ Link {
     }
   }
 }
+// a {
+//   text-decoration: none;
+// }
