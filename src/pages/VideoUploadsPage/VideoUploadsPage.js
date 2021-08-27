@@ -9,7 +9,7 @@ const VideoUploadsPage = () => {
             <Header />
             <h1 className="video-uploads__title">Upload Video</h1>
             <p className="video-uploads__subtitle">VIDEO THUMBNAIL</p>
-            <img className="video-uploads__img" src={videoThumb} alt="bike handlebars"/>
+            <div className="video-uploads__img"></div>
             <form className="video-uploads__form">
                 <label className="video-uploads__form--label">TITLE YOUR VIDEO</label>
                 <input className="video-uploads__form--input" type="text" placeholder="Add a title to your video"></input>
