@@ -33,7 +33,7 @@ class HomePage extends Component {
     apiRequests
       .getDetails(id)
       .then((response) => {
-        console.log(response.data);
+       
         this.setState({
           currentVideo: response.data,
         });
@@ -68,7 +68,7 @@ class HomePage extends Component {
 
   render() {
     if (!this.state.currentVideo) return <p>Loading...</p>;
-    
+
     const filteredList = this.state.currentVideo
       ? this.state.videos.filter(
           (video) => video.id !== this.state.currentVideo.id
@@ -76,10 +76,10 @@ class HomePage extends Component {
       : this.state.videos;
     return (
       <div>
-        <Header />
+        <Header getVideos={this.fetchVideos} video={this.state.videos}/>
         <Videoplayer video={this.state.currentVideo} />
         <div className="page-box">
-          <div>
+          <div> 
             <VideoDetails video={this.state.currentVideo} />
             <NewComments
               video={this.state.currentVideo}

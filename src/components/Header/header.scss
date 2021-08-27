@@ -13,7 +13,9 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+Link {
+  text-decoration: none;
+}
 .navbar {
   display: flex;
   flex-direction: column;
