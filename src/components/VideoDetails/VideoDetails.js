@@ -5,7 +5,7 @@ import "./videodetails.scss";
 
 const options = { year: "numeric", month: "numeric", day: "numeric" };
 const VideoDetails = ({ video }) => {
-  if (!video) return <p>Loading...</p>;
+ 
   return (
     <div className="video-details">
       <h1 className="video-details__title">{video.title}</h1>

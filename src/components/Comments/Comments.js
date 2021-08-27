@@ -4,7 +4,7 @@ const options = { year: "numeric", month: "numeric", day: "numeric" };
 
 
 const Comments = ({video}) => {
-  if (!video) return <p>Loading...</p>;
+ 
     return (
         <section className="comments">
         {video.comments.map((each) => (

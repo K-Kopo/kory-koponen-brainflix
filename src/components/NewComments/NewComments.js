@@ -2,7 +2,7 @@ import React from 'react';
 import "./newcomments.scss";
 
 const NewComments = ({video, addComment}) => {
-  if (!video) return <p>Loading...</p>;
+
     return (
         <section className="new-comment">
         <h3 className="new-comment__title">{video.comments.length} Comments</h3>

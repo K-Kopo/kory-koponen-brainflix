@@ -4,7 +4,7 @@ import "./videoplayer.scss";
 
 
 const Videoplayer = ({video}) => {
-  if (!video) return <p>Loading...</p>;
+
   return (
     <>
     
