@@ -17,7 +17,7 @@ const NewComments = ({ video, addComment }) => {
         >
           <div className="new-comment__outerbox--inputbox">
             <label
-              HTMLfor="comment"
+              htmlFor="comment"
               className="new-comment__outerbox--form--label"
             >
               Join the Conversation
@@ -25,7 +25,7 @@ const NewComments = ({ video, addComment }) => {
             <textarea
               className="new-comment__outerbox--form--textarea"
               id="comment"
-              HTMLfor="comment"
+              htmlFor="comment"
               name="comment"
               type="reset"
               rows="5"
