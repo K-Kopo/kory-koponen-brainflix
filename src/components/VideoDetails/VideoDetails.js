@@ -2,10 +2,9 @@ import React from "react";
 import viewsLogo from "../../assets/Icons/Icon-views.svg";
 import likesLogo from "../../assets/Icons/Icon-likes.svg";
 import "./videodetails.scss";
+import { dateConvert } from "../../utils";
 
-const options = { year: "numeric", month: "numeric", day: "numeric" };
 const VideoDetails = ({ video }) => {
- 
   return (
     <div className="video-details">
       <h1 className="video-details__title">{video.title}</h1>
@@ -13,7 +12,7 @@ const VideoDetails = ({ video }) => {
         <div className="video-details__info">
           <h3 className="video-details__info--author">By {video.channel}</h3>
           <h3 className="video-details__info--date">
-            {new Date(Number(video.timestamp)).toLocaleString("en-US", options)}
+            {dateConvert(video.timestamp)}
           </h3>
         </div>
         <h3 className="video-details__views-likes">

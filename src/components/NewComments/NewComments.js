@@ -1,5 +1,6 @@
 import React from 'react';
 import "./newcomments.scss";
+import { Link } from 'react-router-dom';
 
 const NewComments = ({video, addComment}) => {
 
@@ -30,9 +31,9 @@ const NewComments = ({video, addComment}) => {
               placeholder="Write comment here"
             ></textarea>
             </div>
-            <button type="submit" className="new-comment__outerbox--form--button">
+            <Link to="/" className="new-comment__outerbox--form--link"> <button type="submit" className="new-comment__outerbox--form--button">
               Comment
-            </button>
+            </button></Link>
           </form>
         </div>
       </section>
