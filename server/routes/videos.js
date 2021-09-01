@@ -1,8 +1,8 @@
-const { Router } = require('express');
 const express = require('express');
-const app = express();
-const router = Router.express();
+const router = express.Router();
 
-app.get('/videos', (req,res)=>{
-    res.status(200).json()
-})
+router.get('/videos', (req,res)=>{
+    return res.status(200).json('./data/videos.json');
+});
+
+modules.export = router 
