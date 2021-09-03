@@ -1,18 +1,31 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import "../VideoUploadsPage/videoUploadsPage.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
+import {url} from '../../utils';
 
 
 
 const VideoUploadsPage = () => {
   
-  // videoForm.addEventListener('submit');
   
-  const videoUpload = () => {
-    // const videoForm = event.target;
-    // console.log(videoForm);
-    // event.preventDefault();
+  
+  const videoUpload = (event) => {
+    event.preventDefault();
+    const videoTitle = event.target.title.value;
+    const videoDescription = event.target.description.value;
+    
+    axios.post(`${url}videos`, {
+      id: uuidv4(),
+      title: videoTitle,
+      description: videoDescription
+      
+    })
+    .then(response =>{
+      console.log(response);
+    })
     return alert("Video uploaded successfully!");
     
     
@@ -26,11 +39,12 @@ const VideoUploadsPage = () => {
       </div>
       <p className="video-uploads__subtitle">VIDEO THUMBNAIL</p>
       <div className="video-uploads__img"></div>
-      <form id="videoForm"  className="video-uploads__form">
+      <form id="videoForm" onSubmit={videoUpload} className="video-uploads__form">
         <label className="video-uploads__form--label">TITLE YOUR VIDEO</label>
         <input
           className="video-uploads__form--input"
           type="text"
+          name="title"
           placeholder="Add a title to your video"
         ></input>
         <label className="video-uploads__form--label">
@@ -39,14 +53,15 @@ const VideoUploadsPage = () => {
         <textarea
           className="video-uploads__form--textarea"
           type="text"
+          name="description"
           placeholder="Add a description of your video"
         ></textarea>
         <div className="video-uploads__form--buttonbox">
-          <Link onClick={videoUpload} to="/" className="video-uploads__form--button">
-            {/* <button type="submit" className="video-uploads__form--button2"> */}
+          {/* <Link  to="/" className="video-uploads__form--button"> */}
+            <button type="submit" className="video-uploads__form--button2">
               PUBLISH
-            {/* </button> */}
-          </Link>
+            </button>
+          {/* </Link> */}
           <button className="video-uploads__form--cancel-button">CANCEL</button>
         </div>
       </form>
