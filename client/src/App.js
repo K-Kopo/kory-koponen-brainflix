@@ -8,7 +8,7 @@ import VideoUploadsPage from "./pages/VideoUploadsPage/VideoUploadsPage";
 const App = () => {
 
   return (
-    <div>
+    
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={HomePage} />
@@ -16,7 +16,7 @@ const App = () => {
           <Route path="/:id" component={HomePage} />
         </Switch>
       </BrowserRouter>
-    </div>
+    
   );
 };
 

@@ -3,10 +3,19 @@ import Header from "../../components/Header/Header";
 import "../VideoUploadsPage/videoUploadsPage.scss";
 import { Link } from "react-router-dom";
 
+
+
 const VideoUploadsPage = () => {
-  const videoUpload = (event) => {
-    event.preventDefault();
+  
+  // videoForm.addEventListener('submit');
+  
+  const videoUpload = () => {
+    // const videoForm = event.target;
+    // console.log(videoForm);
+    // event.preventDefault();
     return alert("Video uploaded successfully!");
+    
+    
   };
 
   return (
@@ -17,7 +26,7 @@ const VideoUploadsPage = () => {
       </div>
       <p className="video-uploads__subtitle">VIDEO THUMBNAIL</p>
       <div className="video-uploads__img"></div>
-      <form onClick={videoUpload} className="video-uploads__form">
+      <form id="videoForm"  className="video-uploads__form">
         <label className="video-uploads__form--label">TITLE YOUR VIDEO</label>
         <input
           className="video-uploads__form--input"
@@ -33,10 +42,10 @@ const VideoUploadsPage = () => {
           placeholder="Add a description of your video"
         ></textarea>
         <div className="video-uploads__form--buttonbox">
-          <Link to="/" className="video-uploads__form--button">
-            <button type="submit" className="video-uploads__form--button2">
+          <Link onClick={videoUpload} to="/" className="video-uploads__form--button">
+            {/* <button type="submit" className="video-uploads__form--button2"> */}
               PUBLISH
-            </button>
+            {/* </button> */}
           </Link>
           <button className="video-uploads__form--cancel-button">CANCEL</button>
         </div>
