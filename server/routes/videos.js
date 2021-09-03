@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
+
 const videoPath = ('./data/videos.json');
 
 const dataContent = fs.readFileSync(videoPath);
@@ -18,7 +19,7 @@ const getVideoId = (id)=> {
 }
 
 router.get('/videos/:id', (req, res)=>{
-    if (!req.params.id) {
+    if (req.params.id.length < 11) {
       res.status(404).send("no video with that id found")
     }
     const eachVideo = getVideoId(req.params.id);
