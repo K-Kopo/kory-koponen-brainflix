@@ -39,8 +39,13 @@ router.post("/videos", (req, res) => {
     id: uuidv4(),
     title: req.body.title,
     description: req.body.description,
+    channel: "old man rivers",
+    timestamp: new Date(),
     image: "http://localhost:8080/images/pass_butter.jpeg",
-  };
+    comments: [{
+      name: 'Brooding Teenager',
+      comment: "Hell is other people. Do or do not, there is not try. Early bird gets the rotten worm. The Bees Knees are still overrated.",
+  }]};
   console.log(postVideo);
   const newVideo = readVideoFile();
   newVideo.push(postVideo);
