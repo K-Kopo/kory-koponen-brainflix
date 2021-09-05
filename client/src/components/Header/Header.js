@@ -4,12 +4,10 @@ import logo from "../../assets/Logo/Logo-brainflix.svg";
 import uploadIcon from "../../assets/Icons/Icon-upload.svg";
 import "./header.scss";
 
-const Header = ({ video }) => {
-  video ? (video = video[0].id) : (video = "");
-
+const Header = () => {
   return (
     <div className="navbar">
-      <Link to={`/${video}`}>
+      <Link to="/">
         <img className="navbar__img" src={logo} alt="brainflix logo" />
       </Link>
       <form className="navbar__form">

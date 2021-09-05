@@ -1,17 +1,17 @@
 @import "../../partials/mixin";
 @import "../../partials/variables";
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+// *,
+// *:before,
+// *:after {
+//   box-sizing: inherit;
+// }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// html,
+// body {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
 
 .comments {
   display: flex;

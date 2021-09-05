@@ -1,18 +1,7 @@
 @import "../../partials/mixin";
 @import "../../partials/variables";
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// @include resets;
 
 .video-uploads {
   display: flex;
@@ -64,6 +53,7 @@ body {
       height: 20vh;
     }
     @include desktop {
+      width: 30%;
       margin: 1rem 6rem;
     }
   }
@@ -83,6 +73,8 @@ body {
       margin: 2rem 0 0.5rem 0;
     }
     &--input {
+      @include page-body-copy-mobile;
+      color: $font-color-primary-black;
       background-color: #fafafa;
       border: 2px solid #e1e1e1;
       border-radius: 4px;
@@ -92,7 +84,7 @@ body {
     &--textarea {
       resize: none;
       @include page-body-copy-mobile;
-      color: $font-color-secondary-mercury;
+      color: $font-color-primary-black;
       background-color: #fafafa;
       border: 2px solid #e1e1e1;
       border-radius: 4px;
@@ -112,6 +104,7 @@ body {
     }
 
     &--button2 {
+      @include button-text;
       padding: 1rem 3rem;
       font-size: 1rem;
       background-color: #0095ff;
@@ -127,6 +120,7 @@ body {
       }
     }
     &--cancel-button {
+      @include button-text;
       font-size: 1rem;
       background-color: $font-color-primary-white;
       color: #0095ff;

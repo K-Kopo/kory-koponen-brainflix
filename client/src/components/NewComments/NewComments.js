@@ -2,15 +2,14 @@ import React from "react";
 import "./newcomments.scss";
 import { Link } from "react-router-dom";
 
-const NewComments = ({ video, addComment }) => {
+const NewComments = ({ comments }) => {
   return (
     <section className="new-comment">
-      <h3 className="new-comment__title">{video.comments.length} Comments</h3>
+      <h3 className="new-comment__title">{comments.length} Comments</h3>
       <div className="new-comment__outerbox">
         <div className="new-comment__outerbox--img"></div>
 
         <form
-          onSubmit={addComment}
           className="new-comment__outerbox--form"
           action="submit"
           id="commentForm"
@@ -35,10 +34,7 @@ const NewComments = ({ video, addComment }) => {
           </div>
           <Link to="/" className="new-comment__outerbox--form--link">
             {" "}
-            <button
-              type="submit"
-              className="new-comment__outerbox--form--button"
-            >
+            <button className="new-comment__outerbox--form--button">
               Comment
             </button>
           </Link>

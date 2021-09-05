@@ -8,6 +8,8 @@ import Comments from "../../components/Comments/Comments";
 import { apiRequests } from "../../utils";
 
 
+
+
 class HomePage extends Component {
   state = {
     videos: [],
@@ -19,6 +21,9 @@ class HomePage extends Component {
       this.setState({
         currentVideo: response.data,
       });
+    })
+    .catch(error => {
+      console.log(error)
     });
   };
 
@@ -36,6 +41,9 @@ class HomePage extends Component {
 
       const displayVideoId = currentVideoId ? currentVideoId : firstVideo.id;
       this.getVideoDetails(displayVideoId);
+    })
+    .catch(error => {
+      console.log(error)
     });
   };
 
@@ -45,6 +53,7 @@ class HomePage extends Component {
 
     if (currentVideoId !== prevVideoId) {
       this.getVideoDetails(currentVideoId);
+      window.scrollTo(0, 0);
     }
   }
 
@@ -61,12 +70,12 @@ class HomePage extends Component {
         <Header video={this.state.videos} />
         <Videoplayer video={this.state.currentVideo} />
         <div className="page-box">
-          <div> {/* this is necessary for styling */}
+          <div> {/* this is necessary for styling - React fragment won't work*/}
             <VideoDetails video={this.state.currentVideo} />
             <NewComments
-              video={this.state.currentVideo}
+              comments={this.state.currentVideo.comments}
             />
-            <Comments video={this.state.currentVideo} />
+            <Comments comments={this.state.currentVideo.comments} />
           </div>
           <VideoList video={filteredList} />
         </div>

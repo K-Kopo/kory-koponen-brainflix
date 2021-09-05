@@ -2,10 +2,10 @@ import "./comments.scss";
 import React from "react";
 import { dateConvert } from "../../utils";
 
-const Comments = ({ video }) => {
+const Comments = ({ comments }) => {
   return (
     <section className="comments">
-      {video.comments.map((each) => (
+      {comments.map((each) => (
         <article key={each.id} className="comments__outerbox">
           <div className="comments__img"></div>
           <div className="comments__innerbox">
