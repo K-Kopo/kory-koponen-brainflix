@@ -5,13 +5,11 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { url } from "../../utils";
 
-const VideoUploadsPage = ({history, component }) => {
-  
+const VideoUploadsPage = ({ history, component }) => {
   const videoUpload = (event) => {
     event.preventDefault();
     const videoTitle = event.target.title.value;
     const videoDescription = event.target.description.value;
-    
 
     axios
       .post(`${url}videos`, {
@@ -19,11 +17,13 @@ const VideoUploadsPage = ({history, component }) => {
         title: videoTitle,
         description: videoDescription,
       })
-      .then((response) => {
-        console.log(response)
-      });
-    alert("Video uploaded successfully!");
-    history.push("/");
+      .then(() => {
+        alert("Video uploaded successfully!");
+        history.push("/");
+      })
+      .catch((error) => {
+          console.log(error);
+      })
   };
 
   return (
@@ -60,7 +60,9 @@ const VideoUploadsPage = ({history, component }) => {
             PUBLISH
           </button>
 
-          <Link to="/" className="video-uploads__form--cancel-button">CANCEL</Link>
+          <Link to="/" className="video-uploads__form--cancel-button">
+            CANCEL
+          </Link>
         </div>
       </form>
     </div>

@@ -1,17 +1,5 @@
 @import "../../partials/mixin";
 @import "../../partials/variables";
-// *,
-// *:before,
-// *:after {
-//   box-sizing: inherit;
-// }
-
-// html,
-// body {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
 
 .new-comment {
   display: flex;
@@ -69,6 +57,7 @@
         @include subheader-text-mobile;
         color: $font-color-primary-silver;
         text-transform: uppercase;
+        padding-bottom: .5rem;
       }
       &--textarea {
         resize: none;
@@ -90,7 +79,7 @@
         margin: 1rem -1rem 1rem 0;
         @include tablet {
           width: 25%;
-          margin: 1rem;
+          margin: 1rem 1rem .5rem 1rem;
         }
       }
 
